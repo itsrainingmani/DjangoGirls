@@ -8,16 +8,13 @@
         <div>
             <h1><a href="/">Mani's Blog</a></h1>
         </div>
-        <div>
-            <p>published: 14.06.2017, 12:14</p>
-            <h2><a href="">My First post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque.</p>
-        </div>
-
-        <div>
-            <p>published: 14.06.2017, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque.</p>
-        </div>
+        
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
